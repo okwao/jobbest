@@ -7,37 +7,25 @@ Jobs.attachSchema(new SimpleSchema({
   },
   location: {
     type: String,
-    label: "location",
+    label: "Location",
     optional: true
   },
-  Category: {
+  category: {
     type: String,
     label: "Category",
     min: 0
   },
-  Description: {
+  descriptionrequirements: {
     type: String,
-    label: "Description",
+    label: "Description & Requirements",
     min: 0
   },
-  Requirements: {
+  contacturl: {
     type: String,
-    label: "Requirements",
-    optional:true,
-    min: 0
-  },
-  Contact: {
-    type: String,
-    label: "Contact",
+    label: "Contact & Url",
     max:10
   },
-  url: {
-    type: String,
-    label: "url",
-    optional: true,
-    max: 1000
-  },
-  DateofPost: {
+  dateofpost: {
     type: Date,
     label: "Date of Post",
   }
