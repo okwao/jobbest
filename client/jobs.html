@@ -1,0 +1,14 @@
+<template name="jobs">
+	{{#each job}}
+		<li>{{title}}</li>
+
+		{{else}}
+		
+		<!-- You can use {{else}} to handle an empty array-->
+		<li>No projects yet</li>
+	{{/each}}
+
+	<nav class="navbar navbar-default" id="footer">
+    <i class="fa fa-copyright"></i> 2015 Jobbest. All Rights Reserved.
+  </nav>
+</template>
