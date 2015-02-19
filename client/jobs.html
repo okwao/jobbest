@@ -1,14 +1,19 @@
 <template name="jobs">
 	{{#each job}}
-		<li>{{title}}</li>
+	<div class="col-md-4">
+		<div>{{title}}</div>
+		<div>{{location}}</div>
+		<div>{{descriptionrequirements}}</div>
+		<div>{{contacturl}}</div>
+		<div>{{dateofpost}}</div>
+		{{#afModal class="btn btn-primary" collection="Jobs" operation="update" doc=_id}}
+			Update post
+		{{/afModal}}
 
-		{{else}}
-		
-		<!-- You can use {{else}} to handle an empty array-->
-		<li>No projects yet</li>
+		{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
+   			Delete post
+		{{/afModal}}
+	</div>
 	{{/each}}
-
-	<nav class="navbar navbar-default" id="footer">
-    <i class="fa fa-copyright"></i> 2015 Jobbest. All Rights Reserved.
-  </nav>
+	
 </template>

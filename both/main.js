@@ -12,8 +12,17 @@ Jobs.attachSchema(new SimpleSchema({
   },
   category: {
     type: String,
-    label: "Category",
-    min: 0
+    autoform: {
+      options: function(){
+        return[
+        {value: 'fellows', label:'Teaching Fellow'},
+        {value: 'web', label:'Web Developer'},
+        {value: 'android', label:'Android Developer'},
+        {value: 'css', label:'HTML & CSS (UI/UX)'},
+        {value: 'other', label:'Other'}
+        ]
+      }
+    }
   },
   descriptionrequirements: {
     type: String,
@@ -23,7 +32,6 @@ Jobs.attachSchema(new SimpleSchema({
   contacturl: {
     type: String,
     label: "Contact & Url",
-    max:10
   },
   dateofpost: {
     type: Date,
