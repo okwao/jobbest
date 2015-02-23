@@ -1,5 +1,7 @@
 Router.configure({
   layoutTemplate: "Layout",
+  routeControllerNameConverter: "camelCase",
+  notFoundTemplate: '404'
 })
 Router.route('/', function () {      // Route is the path after the url
   this.render('home');               // 'home' refers to the home template

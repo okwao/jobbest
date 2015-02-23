@@ -1,11 +1,14 @@
 <template name="jobs">
 	{{#each job}}
-	<div class="col-md-4">
-		<div>{{title}}</div>
-		<div>{{location}}</div>
-		<div>{{descriptionrequirements}}</div>
-		<div>{{contacturl}}</div>
-		<div>{{dateofpost}}</div>
+	<div class="panel panel-default col-md-3 box">
+  <div class="panel-heading">
+  	{{title}}, {{location}}
+  </div>
+  <div class="panel-body">
+    <p>{{descriptionrequirements}}</p>
+    <p>{{contacturl}}</p>
+    {{#if currentUser}}
+    <div class="panel-footer">
 		{{#afModal class="btn btn-primary" collection="Jobs" operation="update" doc=_id}}
 			Update post
 		{{/afModal}}
@@ -14,6 +17,9 @@
    			Delete post
 		{{/afModal}}
 	</div>
-	{{/each}}
-	
+
+		{{/if}}
+  </div>
+</div>
+ {{/each}}
 </template>

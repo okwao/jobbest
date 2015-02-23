@@ -17,7 +17,7 @@ Jobs.attachSchema(new SimpleSchema({
         return[
         {value: 'fellows', label:'Teaching Fellow'},
         {value: 'web', label:'Web Developer'},
-        {value: 'android', label:'Android Developer'},
+        {value: 'mobile', label:'Mobile Developer'},
         {value: 'css', label:'HTML & CSS (UI/UX)'},
         {value: 'other', label:'Other'}
         ]
@@ -32,9 +32,5 @@ Jobs.attachSchema(new SimpleSchema({
   contacturl: {
     type: String,
     label: "Contact & Url",
-  },
-  dateofpost: {
-    type: Date,
-    label: "Date of Post",
   }
 }));
