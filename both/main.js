@@ -18,7 +18,7 @@ Jobs.attachSchema(new SimpleSchema({
         {value: 'fellows', label:'Teaching Fellow'},
         {value: 'web', label:'Web Developer'},
         {value: 'mobile', label:'Mobile Developer'},
-        {value: 'css', label:'HTML & CSS (UI/UX)'},
+        {value: 'dtdev', label:'Desktop Developer'},
         {value: 'other', label:'Other'}
         ]
       }

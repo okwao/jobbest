@@ -1,5 +1,5 @@
-Template.jobs.helpers({
-	job:function(){
-		return Jobs.find().fetch();
-	}
-})
+// Template.jobs.helpers({
+// 	job:function(){
+// 		return Jobs.find().fetch();
+// 	}
+// })

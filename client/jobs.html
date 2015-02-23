@@ -1,6 +1,15 @@
 <template name="jobs">
-	{{#each job}}
-	<div class="panel panel-default col-md-3 box">
+	<div class ="container cbox">
+		<p>
+		<a href="{{pathFor 'jobs'}}" class="btn btn-default">All Jobs</a>
+		<a href="{{pathFor 'jobsCategory' category='fellows'}}" class="btn btn-primary">Teaching Fellow</a>
+		<a href="{{pathFor 'jobsCategory' category='web'}}" class="btn btn-success">Web Developer</a>
+		<a href="{{pathFor 'jobsCategory' category='mobile'}}" class="btn btn-info">Mobile Developer</a>
+		<a href="{{pathFor 'jobsCategory' category='dtdev'}}" class="btn btn-warning">Desktop Developer</a>
+		<a href="{{pathFor 'jobsCategory' category='other'}}" class="btn btn-danger">Other</a>
+		</p>
+	{{#each jobs}}
+	<div class="panel panel-default col-md-3 col-sm-3 col-lg-3 box">
   <div class="panel-heading">
   	{{title}}, {{location}}
   </div>
@@ -22,4 +31,5 @@
   </div>
 </div>
  {{/each}}
+ </div>
 </template>

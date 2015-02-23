@@ -11,7 +11,7 @@
 {{> navbar}}
 {{> autoformModals}}
 {{> yield}}
-{{>footer}}
+{{> footer}}
 </template>
 
 <template name="navbar">
@@ -41,4 +41,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</template>
+
+<template name="footer">
+  <nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
+    <i class="fa fa-copyright"></i> 2015 Jobbest. All Rights Reserved.
+  </nav>
 </template>
