@@ -1,10 +1,5 @@
 <head>
   <title>Jobbest</title>
-  <script>
-    function myFunction() {
-        alert("You need to be signed in");
-    }
-</script>
 </head>
 
 <template name="Layout">
@@ -34,7 +29,6 @@
         {{#if currentUser}}
         <li >{{#afModal class="btn" collection="Jobs" operation="insert"}}Add a Job{{/afModal}}</li>
         {{/if}}
-
         <li><a href="{{pathFor 'jobs'}}">Jobs</a></li>
         {{>loginButtons}}
       </ul>

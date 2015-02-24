@@ -32,5 +32,14 @@ Jobs.attachSchema(new SimpleSchema({
   contacturl: {
     type: String,
     label: "Contact & Url",
+  },
+  owner:{
+    type: String,
+    autoform:{
+      omit: true
+    },
+    autoValue: function(){
+      return Meteor.userId();
+    }
   }
 }));

@@ -16,18 +16,23 @@
   <div class="panel-body">
     <p>{{descriptionrequirements}}</p>
     <p>{{contacturl}}</p>
-    {{#if currentUser}}
+    
     <div class="panel-footer">
-		{{#afModal class="btn btn-primary" collection="Jobs" operation="update" doc=_id}}
-			Update post
-		{{/afModal}}
+    	<a href="#" class="btn btn-success sign-in-required">Apply</a>
+    	{{#if currentUser}}
+    	{{#if $eq User._id owner}}
+			{{#afModal class="btn btn-info" collection="Jobs" operation="edit" doc=_id}}
+				Edit job
+			{{/afModal}}
 
-		{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
-   			Delete post
-		{{/afModal}}
-	</div>
+			{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
+	   			Delete job
+			{{/afModal}}
+		{{/if}}
 
 		{{/if}}
+		
+	</div>
   </div>
 </div>
  {{/each}}

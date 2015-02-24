@@ -16,3 +16,4 @@ iron:router
 ian:accounts-ui-bootstrap-3
 fortawesome:fontawesome
 yogiben:autoform-modals
+raix:handlebar-helpers
