@@ -1,7 +1,6 @@
 Router.configure({
   layoutTemplate: "Layout",
   routeControllerNameConverter: "camelCase",
-  notFoundTemplate: '404'
 })
 Router.route('/', function () {      // Route is the path after the url
   this.render('home');               // 'home' refers to the home template
@@ -13,10 +12,11 @@ Router.route('/jobs', function () {
   this.render('jobs');
 }, {
   name: 'jobs',
-
   data: function() {                // Data context for the route. Allows properties of retuned
+    var _id = this.params._id;
   	return {                        // objects to be rendered in tempate e.g. {{pageTitle}}
   		jobs: Jobs.find().fetch(), 
+      applications: Applications.find({jobs: _id}).fetch,
   		pageTitle: 'This is my job page'
   	}
   }

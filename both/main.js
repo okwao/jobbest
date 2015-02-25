@@ -27,11 +27,16 @@ Jobs.attachSchema(new SimpleSchema({
   descriptionrequirements: {
     type: String,
     label: "Description & Requirements",
-    min: 0
+    autoform: {
+            rows: 3
+        }
   },
   contacturl: {
     type: String,
     label: "Contact & Url",
+     autoform: {
+            rows: 3
+        }
   },
   owner:{
     type: String,

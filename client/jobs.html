@@ -1,40 +1,54 @@
 <template name="jobs">
 	<div class ="container cbox">
 		<p>
-		<a href="{{pathFor 'jobs'}}" class="btn btn-default">All Jobs</a>
+		<a href="{{pathFor 'jobs' _id=_id}}" class="btn btn-default yay">All Jobs</a>
 		<a href="{{pathFor 'jobsCategory' category='fellows'}}" class="btn btn-primary">Teaching Fellow</a>
 		<a href="{{pathFor 'jobsCategory' category='web'}}" class="btn btn-success">Web Developer</a>
 		<a href="{{pathFor 'jobsCategory' category='mobile'}}" class="btn btn-info">Mobile Developer</a>
 		<a href="{{pathFor 'jobsCategory' category='dtdev'}}" class="btn btn-warning">Desktop Developer</a>
 		<a href="{{pathFor 'jobsCategory' category='other'}}" class="btn btn-danger">Other</a>
 		</p>
-	{{#each jobs}}
-	<div class="panel panel-default col-md-3 col-sm-3 col-lg-3 box">
-  <div class="panel-heading">
-  	{{title}}, {{location}}
-  </div>
-  <div class="panel-body">
-    <p>{{descriptionrequirements}}</p>
-    <p>{{contacturl}}</p>
-    
-    <div class="panel-footer">
-    	<a href="#" class="btn btn-success sign-in-required">Apply</a>
-    	{{#if currentUser}}
-    	{{#if $eq User._id owner}}
-			{{#afModal class="btn btn-info" collection="Jobs" operation="edit" doc=_id}}
-				Edit job
-			{{/afModal}}
+		{{#each jobs}}
+			<div class="panel panel-default col-md-3 col-sm-3 col-lg-3 box">
+		  		<div class="panel-heading">
+		  			{{title}}, {{location}}
+		  		</div>
+		  		<div class="panel-body">
+				    <p>{{descriptionrequirements}}</p>
+				    <p>{{contacturl}}</p>
 
-			{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
-	   			Delete job
-			{{/afModal}}
-		{{/if}}
+				    	
+		    		<div class="panel-footer">
+		    			<a href="#applyModal" class="btn btn-success sign-in-required" data-toggle="modal">Apply</a>
+		    			<div class="modal fade" id="applyModal">
+						  	<div class="modal-dialog">
+						    	<div class="modal-content">
+						      		<div class="modal-header">
+						        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        		<h4 class="modal-title">Apply for Job</h4>
+						      		</div>
+						      		<div class="modal-body">
+						        		{{> quickForm id="insertApplication" collection="Applications" type="insert"}}
+						      		</div>
+						    	</div>
+						  	</div>
+						</div>
 
-		{{/if}}
-		
-	</div>
-  </div>
-</div>
- {{/each}}
- </div>
+				    	{{#if currentUser}}
+				    	{{#if $eq User._id owner}}
+							{{#afModal class="btn btn-info" collection="Jobs" operation="update" doc=_id}}
+								<i class="fa fa-pencil cls"></i>
+							{{/afModal}}
+
+							{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
+					   			<i class="fa fa-trash-o cls"></i>
+							{{/afModal}}
+						{{/if}}
+
+						{{/if}}
+					</div>
+		  		</div>
+			</div>
+	 	{{/each}}
+ 	</div>
 </template>
