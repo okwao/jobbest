@@ -13,7 +13,7 @@ AutoForm.hooks({
   insertApplication: {
     formToDoc: function(doc, ss, formId) {
       console.log(doc);
-      doc.job = Router.current().params._id;
+      doc.jobs = Session.get('applyingTo');
       console.log(doc);
       return doc;
       Router.go('jobs')
