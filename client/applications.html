@@ -1,0 +1,19 @@
+<template name="applications">
+	<div class ="container cbox">
+		{{#each applications}}
+		{{#if $eq User._id owner}}
+		<div class="panel panel-default col-md-3 col-sm-3 col-lg-3">
+			<div class="panel-body">
+				<img src="{{getImg picture}}" class="img-thumbnail img-rounded pict"> 
+				<p>{{letter}}</p>
+			</div>
+			<div class="panel-footer">
+			{{#afModal class="btn btn-danger" collection="Applications" operation="remove" doc=_id}}
+				<i class="fa fa-trash-o cls"></i>
+			{{/afModal}}
+			</div>
+		</div>
+		{{/if}}
+		{{/each}}
+	</div>
+</template>

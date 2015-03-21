@@ -1,14 +1,9 @@
-<template name="jobs">
-	<div class ="container cbox">
-		<p>
-		<a href="{{pathFor 'jobs' _id=_id}}" class="btn btn-default yay">All Jobs</a>
-		<a href="{{pathFor 'jobsCategory' category='fellows'}}" class="btn btn-primary">Teaching Fellow</a>
-		<a href="{{pathFor 'jobsCategory' category='web'}}" class="btn btn-success">Web Developer</a>
-		<a href="{{pathFor 'jobsCategory' category='mobile'}}" class="btn btn-info">Mobile Developer</a>
-		<a href="{{pathFor 'jobsCategory' category='dtdev'}}" class="btn btn-warning">Desktop Developer</a>
-		<a href="{{pathFor 'jobsCategory' category='other'}}" class="btn btn-danger">Other</a>
-		</p>
-		{{#each jobs}}
+<template name="dashboard">
+	<div class="container cbox">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-lg-12">
+				<h1 class="text-center">Welcome to your Dashboard!</h1>
+				{{#each jobs}}
 			<div class="panel panel-default col-md-3 col-sm-3 col-lg-3 box">
 		  		<div class="panel-heading">
 		  			{{title}}, {{location}}
@@ -19,9 +14,7 @@
 
 				    	
 		    		<div class="panel-footer">
-		    			{{#if $neq User._id owner}}
-		    			<a href="#applyModal" class="btn btn-success apply-button sign-in-required" data-toggle="modal">Apply</a>
-		    			{{/if}}
+		    			<!-- <a href="#applyModal" class="btn btn-success apply-button sign-in-required" data-toggle="modal">Apply</a>
 		    			<div class="modal fade" id="applyModal">
 						  	<div class="modal-dialog">
 						    	<div class="modal-content">
@@ -35,7 +28,7 @@
 						    	</div>
 						  	</div>
 						</div>
-
+ -->
 				    	{{#if currentUser}}
 				    	{{#if $eq User._id owner}}
 							{{#afModal class="btn btn-info" collection="Jobs" operation="update" doc=_id}}
@@ -52,5 +45,7 @@
 		  		</div>
 			</div>
 	 	{{/each}}
- 	</div>
+			</div>
+		</div>
+	</div>
 </template>

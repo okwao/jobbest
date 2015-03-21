@@ -34,3 +34,24 @@ Router.route('/jobs/:category/', function(){
 		}
 	}
 })
+
+Router.route('/dashboard', function(){
+  this.render('dashboard');
+},{
+  name: 'dashboard',
+  data: function(){
+    return {
+      jobs: Jobs.find({owner: Meteor.userId()}).fetch()
+    }
+  }
+})
+Router.route('/applications', function(){
+  this.render('applications');
+},{
+  name: 'applications',
+  data: function(){
+    return {
+      applications: Applications.find({owner: Meteor.userId()}).fetch()
+    }
+  }
+})
